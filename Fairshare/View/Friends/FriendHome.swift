@@ -36,13 +36,14 @@ struct FriendHome: View {
                     "To get": Color.green,
                 ])
                 .chartLegend(alignment: .bottom, spacing: 20)
+                .listRowSeparator(.hidden)
                 NavigationLink {
-
+                    FriendDetails()
                 } label: {
                     FriendRow()
                 }
                 NavigationLink {
-
+                    FriendDetails()
                 } label: {
                     FriendRow()
                 }
