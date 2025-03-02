@@ -11,6 +11,7 @@ import SwiftUI
 struct GroupHome: View {
     @State private var search = ""
     @State private var filter: Filter = .all
+    @State private var isShowingGroupCreate = false
     
     enum Filter {
         case all
@@ -56,9 +57,12 @@ struct GroupHome: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-
+                        isShowingGroupCreate.toggle()
                     } label: {
                         Label("Add Group", systemImage: "plus")
+                    }
+                    .sheet(isPresented: $isShowingGroupCreate) {
+                        GroupCreate()
                     }
                 }
             }
