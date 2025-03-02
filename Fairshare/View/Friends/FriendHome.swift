@@ -24,6 +24,26 @@ struct FriendHome: View {
     var body: some View {
         NavigationSplitView {
             List {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        Button("All") {
+
+                        }
+                        .buttonStyle(.borderedProminent)
+                        Button("Friends you owe") {
+
+                        }
+                        Button("Friends who owe") {
+
+                        }
+                    }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.capsule)
+                    .listRowSeparator(.hidden)
+                    .padding(.horizontal)
+                }
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
                 Chart(amounts) { amount in
                     SectorMark(
                         angle: .value("Values", amount.value), angularInset: 1.5

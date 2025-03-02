@@ -52,6 +52,9 @@ struct FriendSettings: View {
                 .listSectionSeparator(.hidden)
             }
             .listStyle(.inset)
+            .navigationTitle("Friend Settings")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackgroundVisibility(.visible, for: .navigationBar)
         }
     }
 }
